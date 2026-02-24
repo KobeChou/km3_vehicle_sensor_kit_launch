@@ -1,0 +1,8 @@
+# 用于 vcs import 导入到 Autoware 工作空间
+# 用法: cd /path/to/autoware_ws && vcs import src < km3_sensor_kit.repos
+
+repositories:
+  km3_vehicle_sensor_kit_launch:
+    type: git
+    url: https://github.com/YOUR_ORG/km3_vehicle_sensor_kit_launch.git  # 替换为实际仓库地址
+    version: main

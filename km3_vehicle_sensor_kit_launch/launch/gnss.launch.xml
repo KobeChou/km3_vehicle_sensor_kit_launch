@@ -1,6 +1,7 @@
 <launch>
   <arg name="launch_driver" default="true"/>
   <arg name="gnss_receiver" default="ublox" description="ublox(default) or septentrio"/>
+  <arg name="extrinsic_only" default="true" description="仅外参模式：可禁用 gnss_poser (将GNSS转为位姿，智驾用)"/>
 
   <group>
     <push-ros-namespace namespace="gnss"/>
@@ -23,8 +24,8 @@
       <include file="$(find-pkg-share septentrio_gnss_driver)/launch/mosaic_x5_rover.launch.xml"/>
     </group>
 
-    <!-- NavSatFix to MGRS Pose -->
-    <include file="$(find-pkg-share autoware_gnss_poser)/launch/gnss_poser.launch.xml">
+    <!-- NavSatFix to MGRS Pose (gnss_poser 将原始GNSS转为位姿，外参模式可保留以获取pose，或按需禁用) -->
+    <include file="$(find-pkg-share autoware_gnss_poser)/launch/gnss_poser.launch.xml" unless="$(var extrinsic_only)">
       <arg name="input_topic_fix" value="$(var navsatfix_topic_name)"/>
       <arg name="input_topic_orientation" value="$(var orientation_topic_name)"/>
 

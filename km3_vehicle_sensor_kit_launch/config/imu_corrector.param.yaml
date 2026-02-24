@@ -1,0 +1,10 @@
+/**:
+  ros__parameters:
+    # IMU 校正参数 (外参标定用默认值，可根据实际标定调整)
+    angular_velocity_offset_x: 0.0
+    angular_velocity_offset_y: 0.0
+    angular_velocity_offset_z: 0.0
+    angular_velocity_stddev_xx: 0.01
+    angular_velocity_stddev_yy: 0.01
+    angular_velocity_stddev_zz: 0.01
+    acceleration_stddev: 0.1
