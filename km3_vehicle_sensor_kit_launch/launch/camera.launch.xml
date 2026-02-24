@@ -1,6 +1,6 @@
 <launch>
   <arg name="launch_driver" default="true"/>
-  <arg name="camera_type" default="left"/>
+  <arg name="camera_type" default="camera0" description="摄像头话题前缀，如 camera0 或 left"/>
 
   <group>
     <push-ros-namespace namespace="camera"/>

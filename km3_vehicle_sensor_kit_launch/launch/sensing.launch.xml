@@ -13,10 +13,10 @@
       <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
     </include>
 
-    <!-- Camera Driver -->
-    <!-- <include file="$(find-pkg-share km3_vehicle_sensor_kit_launch)/launch/camera.launch.xml">
+    <!-- Camera Driver (1 摄像头，仅外参，输出到 camera0 命名空间) -->
+    <include file="$(find-pkg-share km3_vehicle_sensor_kit_launch)/launch/camera_single.launch.xml">
       <arg name="launch_driver" value="$(var launch_driver)" />
-    </include> -->
+    </include>
 
     <!-- IMU Driver -->
     <include file="$(find-pkg-share km3_vehicle_sensor_kit_launch)/launch/imu.launch.xml">
